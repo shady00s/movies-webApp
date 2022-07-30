@@ -21,6 +21,9 @@ export default function MovieDetails(params) {
         pastList.push(params)
         dispatch(FavoriteAction(pastList))
     }
+
+    let newList = useSelector((state) => state.favorites.favoriteMovies)
+
     return <>
         <div className="movieCardContainer bg-white">
             <div className='favContainer'><FontAwesomeIcon onClick={() => FavoritesBtn()} className='icon' icon={faHeart} style={{ color: fav === true ? 'red' : 'grey' }} /></div>

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { languageContext } from './../context/languageContext';
-
+import {Link} from "react-router-dom"
 export function NavBarComponent(){
 
   const {language,setLangContext}= useContext(languageContext);
@@ -9,7 +9,7 @@ export function NavBarComponent(){
     setLangContext(()=> language == "en" ?language = "ar" :  language ="en")
     console.log(language)
   }
-  
+
     return(<>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
@@ -23,7 +23,7 @@ export function NavBarComponent(){
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/favorites">Favorites</a>
+          <Link className="nav-link" to={"/favorites"}>Favorites</Link>
         </li>
         <li className="nav-item">
           <button onClick={langSet} className="btn">Language : {language}</button>

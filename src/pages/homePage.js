@@ -11,8 +11,8 @@ import Loading from './../components/loading';
 export default function HomePage() {
    
     return (<>
-        <NavBarComponent />
         <BrowserRouter>
+        <NavBarComponent />
             <Routes>
                 <Route exact path="/" element={<HomePageMovies />} />
                 <Route exact path="/favorites" element={<FavPage />} />
