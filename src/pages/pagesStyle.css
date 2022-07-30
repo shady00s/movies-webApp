@@ -1,0 +1,14 @@
+.movieContainer{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin:6rem auto;
+    gap: 3rem;
+}
+.moreBtn{
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+}
