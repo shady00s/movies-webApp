@@ -1,5 +1,15 @@
+import { useContext } from "react";
+import { languageContext } from './../context/languageContext';
+
 export function NavBarComponent(){
 
+  const {language,setLangContext}= useContext(languageContext);
+
+  function langSet(){
+    setLangContext(()=> language == "en" ?language = "ar" :  language ="en")
+    console.log(language)
+  }
+  
     return(<>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
@@ -14,6 +24,9 @@ export function NavBarComponent(){
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/favorites">Favorites</a>
+        </li>
+        <li className="nav-item">
+          <button onClick={langSet} className="btn">Language : {language}</button>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

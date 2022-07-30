@@ -2,9 +2,7 @@ const INITIAL_STATE = {
     isLoading :false,
     favoriteMovies:[]
 }
-const initTwo= {
-    favoriteMovies:[]
-}
+
 export  function loaderReducer(state= INITIAL_STATE,action){
     if(action.type === "loaderData"){
         return {...state,isLoading: action.payload}
@@ -19,6 +17,16 @@ export function favoriteReducer(state= INITIAL_STATE,action){
         return {...state,favoriteMovies: action.payload}
     }
     else{
+        return state
+    }
+}
+
+
+export function apiReducer(state =[],action){
+    if(action.type === "apiReducer"){
+        return action.payload
+    }
+    else {
         return state
     }
 }
